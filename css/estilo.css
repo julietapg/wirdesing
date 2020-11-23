@@ -8,6 +8,10 @@
   nav {
     font-size: 15px;
     grid-area: nav; }
+  header {
+    text-transform: uppercase;
+    font-family: 'Bebas Neue',cursive;
+    font-size: 12px; }
   ul {
     display: flex;
     flex-direction: row;
@@ -19,6 +23,7 @@
     overflow: hidden;
     background-color: #333; }
   li {
+    font-size: 10px;
     float: left;
     font-size: 10px; }
   li a {
@@ -42,15 +47,20 @@
     padding: 20px 0;
     text-align: center;
     text-shadow: 2px 2px 4px white;
-    width: 80%; } }
+    width: 80%; }
+  #frase {
+    font-size: 12px;
+    margin: 15px;
+    text-align: center;
+    text-shadow: 1px 1px 1px white;
+    animation-duration: 3s;
+    animation-name: slidein; } }
 
 @keyframes marcas {
   0% {
     background-color: none; }
-  50% {
-    background-color: white; }
   100% {
-    background-color: none; } }
+    background-color: white; } }
 
 .grid {
   display: grid;
@@ -66,21 +76,13 @@
 
 .grid3 {
   display: grid;
-  grid-template-areas: "card cardi cardii";
-  grid-template-rows: 100%;
-  grid-template-columns: 33% 34% 33%; }
+  grid-template-areas: "nav"  "carousel"  "footer";
+  grid-template-rows: 0% 40% 0%;
+  grid-template-columns: 1fr; }
 
-#card1 {
-  grid-area: card;
-  justify-content: center; }
-
-#card2 {
-  grid-area: cardi;
-  justify-content: center; }
-
-#card3 {
-  grid-area: cardii;
-  justify-content: center; }
+#carouselExampleCaptions {
+  grid-area: carousel;
+  align-content: stretch; }
 
 .container {
   padding: 20px;
@@ -96,18 +98,36 @@ header {
 h1 {
   text-align: center;
   align-content: center;
+  color: white;
   margin: 30px; }
 
 h2 {
   text-align: center;
-  align-content: center; }
+  align-content: center;
+  color: white; }
+
+h3 {
+  text-align: center;
+  align-content: center;
+  color: white;
+  margin: 30px; }
 
 #frase {
   font-size: 2rem;
   margin: 30px;
   padding: 30px 100px;
   text-align: center;
-  text-shadow: 1px 1px 1px white; }
+  text-shadow: 1px 1px 1px white;
+  animation-duration: 3s;
+  animation-name: slidein; }
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; }
+  to {
+    margin-left: 0%;
+    width: 100%; } }
 
 #frase:hover {
   padding: 20px;
@@ -196,7 +216,6 @@ li a:hover {
 .color {
   grid-area: colorr;
   font-family: 'Bebas Neue', cursive;
-  background-image: url(imagenes/foto2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-origin: content-box;
@@ -214,7 +233,7 @@ footer {
   text-align: center;
   text-shadow: 100px;
   color: #ffff;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 40px; }
@@ -233,11 +252,8 @@ footer {
   padding: 50px;
   opacity: 50%;
   size: 20%;
-  animation-name: marcas;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in;
-  animation-duration: 2s;
-  animation-delay: 0s; }
+  animation-duration: 3s;
+  animation-name: slidein; }
 
 #contacto {
   font-family: 'Bebas Neue',cursive;
@@ -251,3 +267,9 @@ footer {
 
 fieldset {
   margin: 30px; }
+
+#video-background2 {
+  height: auto;
+  position: fixed;
+  width: auto;
+  z-index: -100; }
